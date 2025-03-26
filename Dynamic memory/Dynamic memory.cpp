@@ -1,30 +1,46 @@
-// Dynamic memory.cpp : This file contains the 'main' function. Program execution begins and ends there.
+п»ї// Dynamic memory.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
 using namespace std;
 
+int global = 100; // global and static data
+
+void fun(int a)
+{
+	// local var - STACK
+	int b = ++a * global;
+	cout << b << endl;
+} // a,b  removed from stack
+
 int main()
 {
-	// new int- створили дин. змiнну цілого типу, адресу створеної ділянки присвоїли у  вказівник p,  p ----> Heap : [100]
-	int* p = new int{ 100 };
+	// new int- РІРёРґС–Р»СЏС”С‚СЊСЃСЏ РґРёРЅР°РјС–С‡РЅР° РґС–Р»СЏРЅРєР° РЅР° Р·РјС–РЅРЅСѓ С†С–Р»РѕРіРѕ С‚РёРїСѓ, РїРѕРІРµСЂС‚Р°С” Р°РґСЂРµСЃСѓ СЃС‚РІРѕСЂРµРЅРѕС— РґС–Р»СЏРЅРєРё, p = Р°РґСЂРµСЃС‚Сѓ СЃС‚РІ РґС–Р»СЏРЅРєРё
+	//,  p ----> Heap : [100]
+	int* p = new int{ global };
+	cout << "Address of int = " << p << endl;
 	cout << "Dymanic int var = " << *p << endl;
 
-	double* d = new double;
+	double* d = new double; // СЃС‚РІРѕСЂРёР»Рё РґРёРЅ Р·РјС–РЅРЅСѓ РґСЂРѕР±РѕРІРѕРіРѕ С‚РёРїСѓ
+	cout << "\nAddress of double = " << d << endl;
 	cout << "\nEnter double value : ";
 	cin >> *d;
 	cout << "Dymanic double var = " << *p << endl;
 
-	delete p; // вилучення дин змінної, на яке вказує p
-	delete d; // вилучення дин змінної, на яке вказує d
+	delete p; // РІРёРґР°Р»РµРЅРЅСЏ РґРёРЅР°РјiС‡РЅРѕС— Р·РјС–РЅРЅРѕС—, РЅР° СЏРєСѓ РІРєР°Р·СѓС” РІРєР°Р·С–РІРЅРёРє p
+	delete d; // РІРёРґР°Р»РµРЅРЅСЏ РґРёРЅР°РјiС‡РЅРѕС— Р·РјС–РЅРЅРѕС—, РЅР° СЏРєСѓ РІРєР°Р·СѓС” РІРєР°Р·С–РІРЅРёРє d
+	
+	cout << "\nPointer d = " << d << endl;
+	//cout << "\nPointer d = " << *d << endl; // memory error, run time error
+
 
 	int size;
 	cout << "\n\nEnter size of array: ";
 	cin >> size;
 
-	// new int[size]- створили дин. масив  цілого типу, адресу створеного масиву присвоїли у вказівник arr,  p ----> Heap : [0 0 0 0 ... 0]
+	// arr = new int[size],  arr ----> Heap : [0 0 0 0 ... 0]
 
-	int* arr = new int[size] {}; // якщо вказати  {} обнулить масив
+	int* arr = new int[size] {}; //   {} Р·Р°РЅСѓР»РµРЅРЅСЏ РјР°СЃРёРІСѓ
 
 	for (int i = 0; i < size; i++)
 	{
@@ -33,7 +49,7 @@ int main()
 	}
 	cout << endl;
 
-	delete[] arr; // вилучення дин масиву, на який вказує arr
+	delete[] arr; // РІРёРґР°Р»РµРЅРЅСЏ РґРёРЅР°РјС–С‡РЅРѕРіРѕ РјР°СЃРёРІСѓ, РЅР° СЏРєРёР№ РІРєР°Р·СѓС” РІРєР°Р·С–РІРЅРёРє arr
 
 }
 
