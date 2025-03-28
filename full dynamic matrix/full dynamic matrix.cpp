@@ -1,0 +1,49 @@
+﻿// full dynamic matrix.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+
+void printMatrix(int** m, int r, int c)
+{
+	for (int i = 0; i < r; i++)
+	{
+		for (int j = 0; j < c; j++)
+		{
+			cout << m[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+int main()
+{
+	int rows;
+	int cols;
+
+	cout << "Enter number of rows : ";
+	cin >> rows;
+
+	cout << "Enter number of columns : ";
+	cin >> cols;
+
+	int** matrix = new int* [rows]; //matrix= вказівник на дин матрицю, створили масив вказівників на майбутні рядки
+
+
+	///////////////////////////////////
+	for (int i = 0; i < rows; i++)
+	{
+		matrix[i] = new int[cols] {}; // у циклі створюємо черговий (динамічни1) рядок довжини cols
+	}
+
+	matrix[0][0] = 5;
+	matrix[1][2] = 7;
+
+	printMatrix(matrix, rows, cols);
+
+	//remove matrix
+	for (int i = 0; i < rows; i++)
+	{
+		delete[] matrix[i]; // вилучаємо кожен рядок у циклі
+	}
+	delete[] matrix;  // вилучаємо масив вказівниів
+}
