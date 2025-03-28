@@ -3,18 +3,8 @@
 
 #include <iostream>
 using namespace std;
+#include "dyn_matrix.h"
 
-void printMatrix(int** m, int r, int c)
-{
-	for (int i = 0; i < r; i++)
-	{
-		for (int j = 0; j < c; j++)
-		{
-			cout << m[i][j] << "\t";
-		}
-		cout << endl;
-	}
-}
 int main()
 {
 	int rows;
@@ -40,10 +30,16 @@ int main()
 
 	printMatrix(matrix, rows, cols);
 
+	cout << "Add new last row with value " << 1 << endl;
+	addRow(matrix, rows, cols, 1);
+	printMatrix(matrix, rows, cols);
+
 	//remove matrix
-	for (int i = 0; i < rows; i++)
-	{
-		delete[] matrix[i]; // вилучаємо кожен рядок у циклі
-	}
-	delete[] matrix;  // вилучаємо масив вказівниів
+	removeMatrix(matrix, rows);
+	printMatrix(matrix, rows, cols);
+	//for (int i = 0; i < rows; i++)
+	//{
+	//	delete[] matrix[i]; // вилучаємо кожен рядок у циклі
+	//}
+	//delete[] matrix;  // вилучаємо масив вказівників
 }

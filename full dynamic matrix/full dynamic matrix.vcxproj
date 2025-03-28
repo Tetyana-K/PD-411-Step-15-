@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dyn_matrix.cpp" />
     <ClCompile Include="full dynamic matrix.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dyn_matrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
