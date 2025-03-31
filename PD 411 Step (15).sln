@@ -13,15 +13,23 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dynamic array", "Dynamic ar
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointer to pointer", "Pointer to pointer\Pointer to pointer.vcxproj", "{8CC2DCCF-799D-42E8-99AE-8D8824782E32}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dyn matrix demo", "dyn matrix demo\dyn matrix demo.vcxproj", "{BA8F1ECA-D94D-493A-92BD-3BCA53487243}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dyn matrix demo", "dyn matrix demo\dyn matrix demo.vcxproj", "{BA8F1ECA-D94D-493A-92BD-3BCA53487243}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "full dynamic matrix", "full dynamic matrix\full dynamic matrix.vcxproj", "{92F4E43E-4FF6-4A5B-A4CB-5B582976D331}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pointer to fun as param", "pointer to fun\pointer to fun.vcxproj", "{671E6FA6-97B0-499D-863C-4E6B35F191BB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointer to fun as param", "pointer to fun\pointer to fun.vcxproj", "{671E6FA6-97B0-499D-863C-4E6B35F191BB}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ptr to func", "ptr to func\ptr to func.vcxproj", "{B927B2F0-D25F-490E-B12F-4629961077FF}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "array of func ptrs", "array of func ptrs\array of func ptrs.vcxproj", "{53E79E21-FFE2-40F5-9635-B0052DAE6C3E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Preprocessor C", "preprocessor C\preprocessor C.vcxproj", "{B06B1335-FA85-4DDF-B0FA-01F3C03B0773}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CString func", "CString func", "{FEEA817D-0BD9-47B5-8199-647D8F9C5676}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pointer to function", "Pointer to function", "{8D19F9FB-0264-438C-AB39-CE80B2747432}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dynamic arrays", "Dynamic arrays", "{B4C9CBD7-D4B3-49FE-AA46-954ADBE9EE3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,9 +119,28 @@ Global
 		{53E79E21-FFE2-40F5-9635-B0052DAE6C3E}.Release|x64.Build.0 = Release|x64
 		{53E79E21-FFE2-40F5-9635-B0052DAE6C3E}.Release|x86.ActiveCfg = Release|Win32
 		{53E79E21-FFE2-40F5-9635-B0052DAE6C3E}.Release|x86.Build.0 = Release|Win32
+		{B06B1335-FA85-4DDF-B0FA-01F3C03B0773}.Debug|x64.ActiveCfg = Debug|x64
+		{B06B1335-FA85-4DDF-B0FA-01F3C03B0773}.Debug|x64.Build.0 = Debug|x64
+		{B06B1335-FA85-4DDF-B0FA-01F3C03B0773}.Debug|x86.ActiveCfg = Debug|Win32
+		{B06B1335-FA85-4DDF-B0FA-01F3C03B0773}.Debug|x86.Build.0 = Debug|Win32
+		{B06B1335-FA85-4DDF-B0FA-01F3C03B0773}.Release|x64.ActiveCfg = Release|x64
+		{B06B1335-FA85-4DDF-B0FA-01F3C03B0773}.Release|x64.Build.0 = Release|x64
+		{B06B1335-FA85-4DDF-B0FA-01F3C03B0773}.Release|x86.ActiveCfg = Release|Win32
+		{B06B1335-FA85-4DDF-B0FA-01F3C03B0773}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{614F518E-D5A9-458A-BE5D-AD8369CB69B2} = {FEEA817D-0BD9-47B5-8199-647D8F9C5676}
+		{E4B7618A-B27E-4D9C-92B9-82A29FCAE915} = {FEEA817D-0BD9-47B5-8199-647D8F9C5676}
+		{4139A579-4878-40EE-BF01-993F044B0114} = {B4C9CBD7-D4B3-49FE-AA46-954ADBE9EE3A}
+		{666787D1-924D-407A-A242-FA2973EDFA7E} = {B4C9CBD7-D4B3-49FE-AA46-954ADBE9EE3A}
+		{BA8F1ECA-D94D-493A-92BD-3BCA53487243} = {B4C9CBD7-D4B3-49FE-AA46-954ADBE9EE3A}
+		{92F4E43E-4FF6-4A5B-A4CB-5B582976D331} = {B4C9CBD7-D4B3-49FE-AA46-954ADBE9EE3A}
+		{671E6FA6-97B0-499D-863C-4E6B35F191BB} = {8D19F9FB-0264-438C-AB39-CE80B2747432}
+		{B927B2F0-D25F-490E-B12F-4629961077FF} = {8D19F9FB-0264-438C-AB39-CE80B2747432}
+		{53E79E21-FFE2-40F5-9635-B0052DAE6C3E} = {8D19F9FB-0264-438C-AB39-CE80B2747432}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0CFFA52-D3BC-45DD-9DEE-C504699592DB}
