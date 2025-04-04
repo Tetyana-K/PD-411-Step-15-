@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <fstream>
 #include <cstring>
 #include <string>
 
@@ -37,6 +38,60 @@ void printEmployee(const Employee& employee)
 	cout << "Age: " << employee.age << endl;
 	printContacts(employee.contacts);
 }
+void writeToFileEmployeeReport(const Employee& employee, string path = "employee_report.txt")
+{
+	ofstream file;
+	file.open(path);
+	 //if(file) // ok
+	if (!file) // not  ok
+	{
+		cout << "Error file " << path << endl;
+		return;
+	}
+	file << "Full Name: " << employee.fullName << endl;
+	file << "Position: " << employee.position << endl;
+	file << "Age: " << employee.age << endl;
+
+	file << "Email: " << employee.contacts.email << endl;
+	file << "Phone: " << employee.contacts.phone << endl;
+
+}
+void writeToFileEmployee(const Employee& employee, string path = "employee.txt")
+{
+	ofstream file;
+	file.open(path);
+	 //if(file) // ok
+	if (!file) // not  ok
+	{
+		cout << "Error file " << path << endl;
+		return;
+	}
+	file <<  employee.fullName << endl;
+	file << employee.position << endl;
+	file<<  employee.age << endl;
+
+	file <<employee.contacts.email << endl;
+	file <<employee.contacts.phone << endl;
+
+}
+void readFromFileEmployee( Employee& employee, string path = "employee.txt")
+{
+	ifstream file;
+	file.open(path);
+	//if(file) // ok
+	if (!file) // not  ok
+	{
+		cout << "Error file " << path << endl;
+		return;
+	}
+	getline(file, employee.fullName); // string
+	file.getline( employee.position, POSITION_SIZE);
+	file >> employee.age;
+
+	file >> employee.contacts.email;
+	file >> employee.contacts.phone;
+}
+
 int main() {
 
 	Employee employee;
@@ -55,12 +110,21 @@ int main() {
 	/*cout << "Email: " << employee.contacts.email << endl;
 	cout << "Phone: " << employee.contacts.phone << endl;*/
 	printContacts(employee.contacts);
+	
 
 	// ми можемо також створити обєкт Контактів
 	//Employee::Contacts contacts = { "noname@some.com", "+xxxxxxxxxxxx" };// employee.contacts;
 	Employee::Contacts contacts =  employee.contacts;
 	cout << "\n\nEmail: " << contacts.email << endl;
 	cout << "Phone: " << contacts.phone << endl;
+
+	writeToFileEmployeeReport(employee, "empl-report.txt");
+	writeToFileEmployee(employee, "empl.txt");
+
+	Employee readEmployee;
+	readFromFileEmployee(readEmployee, "empl.txt");
+	cout << "\n\nRead employee from file\n";
+	printEmployee(readEmployee);
 
 	return 0;
 }

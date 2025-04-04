@@ -84,3 +84,12 @@ int main()
 
 }
 
+// Визначити структуру Студент з полями імя студента, ід студента, оцінки (python, html, cplus). Оцінки подати у вигляді окремою структури типу Marks.
+//Створити одного-двох студентів,заповнпти дані про них з клавіатури, вивести на екран. Написати для завдання відповідні функції 
+/*
+	void printMarks(const Marks & marks);
+	void intputMarks( Marks & marks);
+
+	void printStudent(const Student & marks);
+	void intputStudent( Student & marks);
+*/
