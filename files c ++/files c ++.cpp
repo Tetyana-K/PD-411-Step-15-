@@ -8,16 +8,16 @@ int main()
 {
     string fname = "my.txt";
     ofstream fout(fname); // створили обєкт файлового потоку f і повязали цей потік з фізичним файлом
-    if (!fout.is_open())
+    if (!fout.is_open()) // перевіряємо чи файл відкрився, якщо ні, то виводимо повідомлення про помилкута  виходимо з функції main()
     {
         cout << "Error opening file\n";
         return 0;
     }
     int value = 123;
-    fout << "Hello from files!\n";
-    fout <<  value * 2 << endl;
+    fout << "Hello from files!\n";   // пишемо у файл текст  "Hello from files!\n"
+    fout <<  value * 2 << endl; // пишемо у файл 123*2, тобто 246
 
-    fout.close();
+    fout.close(); // закри
 
     ifstream fin(fname);
     char readText[256];
