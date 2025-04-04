@@ -60,12 +60,13 @@ void writeToFileEmployee(const Employee& employee, string path = "employee.txt")
 {
 	ofstream file;
 	file.open(path);
-	 //if(file) // ok
-	if (!file) // not  ok
+
+	if (!file)
 	{
 		cout << "Error file " << path << endl;
 		return;
 	}
+
 	file <<  employee.fullName << endl;
 	file << employee.position << endl;
 	file<<  employee.age << endl;
@@ -78,14 +79,14 @@ void readFromFileEmployee( Employee& employee, string path = "employee.txt")
 {
 	ifstream file;
 	file.open(path);
-	//if(file) // ok
-	if (!file) // not  ok
+	
+	if (!file) 
 	{
 		cout << "Error file " << path << endl;
 		return;
 	}
-	getline(file, employee.fullName); // string
-	file.getline( employee.position, POSITION_SIZE);
+	getline(file, employee.fullName); // так читаємо рядкок С++ (string) із файлового потоку (якщо хочемо читати кілька слів до \n)
+	file.getline( employee.position, POSITION_SIZE); // так читаємо рядкок С (масив символів) із файлового потоку
 	file >> employee.age;
 
 	file >> employee.contacts.email;

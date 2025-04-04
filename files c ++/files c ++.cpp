@@ -17,15 +17,15 @@ int main()
     fout << "Hello from files!\n";   // пишемо у файл текст  "Hello from files!\n"
     fout <<  value * 2 << endl; // пишемо у файл 123*2, тобто 246
 
-    fout.close(); // закри
+    fout.close(); // закрили файловий потік
 
     ifstream fin(fname);
     char readText[256];
     int readValue;
 
     //fin >> readText; // прочитає перше слово
-    fin.getline(readText, 100);
-    fin >> readValue;
+    fin.getline(readText, 100); // прочитає рядок до \n, але не більше як 99 символів
+    fin >> readValue; // читаємо ціле у змінну readValue із поточної позиції файлу
 
     cout << "Read text from file : " << readText << endl;
     cout << "Read value from file : " << readValue << endl;
