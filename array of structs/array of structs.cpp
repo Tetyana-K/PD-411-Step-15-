@@ -12,6 +12,7 @@ struct Product
 	char name[MAX_LEN];
 	double price;
 };
+
 void printProduct(const Product & product);
 
 void printShop(const Product  shop[], int actualSize);
@@ -31,9 +32,10 @@ void addProduct(Product product, Product shop[], int& actualSize, int maxSize)
 
 int main()
 {
-	const int MAX_SIZE = 10;
+	const int MAX_SIZE = 10; // capacity, ємність (максимальне число, скільки виділено памяті) для масиву товарів (нашого магазину)
+	
 
-	int actualSize = 3;
+	int actualSize = 3; 
 	Product shop[MAX_SIZE]
 	{
 		{"Bread bread", 2.20},
@@ -48,6 +50,7 @@ int main()
 	printProducts(shop, actualSize, "Bread");
 	cout << endl;
 	Product milk{ "Milk", 2.45 };
+	
 	addProduct(milk, shop, actualSize, MAX_SIZE);
 	addProduct(milk, shop, actualSize, MAX_SIZE);
 	addProduct(milk, shop, actualSize, MAX_SIZE);
