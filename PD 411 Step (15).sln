@@ -31,9 +31,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pointer to function", "Poin
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dynamic arrays", "Dynamic arrays", "{B4C9CBD7-D4B3-49FE-AA46-954ADBE9EE3A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "structts", "structts\structts.vcxproj", "{F8AD6133-503D-4120-B513-CF4B710278B6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "structs", "structts\structts.vcxproj", "{F8AD6133-503D-4120-B513-CF4B710278B6}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "array of structs", "array of structs\array of structs.vcxproj", "{0BD26FF5-2D37-489E-B9A3-150EF518052C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nested structs", "nested structs\nested structs.vcxproj", "{C35751E9-6BDF-4C2D-A8F0-6CDC8142EFF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +149,14 @@ Global
 		{0BD26FF5-2D37-489E-B9A3-150EF518052C}.Release|x64.Build.0 = Release|x64
 		{0BD26FF5-2D37-489E-B9A3-150EF518052C}.Release|x86.ActiveCfg = Release|Win32
 		{0BD26FF5-2D37-489E-B9A3-150EF518052C}.Release|x86.Build.0 = Release|Win32
+		{C35751E9-6BDF-4C2D-A8F0-6CDC8142EFF9}.Debug|x64.ActiveCfg = Debug|x64
+		{C35751E9-6BDF-4C2D-A8F0-6CDC8142EFF9}.Debug|x64.Build.0 = Debug|x64
+		{C35751E9-6BDF-4C2D-A8F0-6CDC8142EFF9}.Debug|x86.ActiveCfg = Debug|Win32
+		{C35751E9-6BDF-4C2D-A8F0-6CDC8142EFF9}.Debug|x86.Build.0 = Debug|Win32
+		{C35751E9-6BDF-4C2D-A8F0-6CDC8142EFF9}.Release|x64.ActiveCfg = Release|x64
+		{C35751E9-6BDF-4C2D-A8F0-6CDC8142EFF9}.Release|x64.Build.0 = Release|x64
+		{C35751E9-6BDF-4C2D-A8F0-6CDC8142EFF9}.Release|x86.ActiveCfg = Release|Win32
+		{C35751E9-6BDF-4C2D-A8F0-6CDC8142EFF9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
